@@ -1,4 +1,51 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
-  background-color: aliceblue;
+}
+
+
+/* SCREEN */
+/*****************************************************************/
+#up { grid-area: up; }
+#left { grid-area: left; }
+#mid { grid-area: mid; }
+#right { grid-area: right; }
+#down { grid-area: down; }
+
+#screen {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+
+  display: grid;
+  grid-template-areas:
+    'up up up'
+    'left mid right'
+    'left mid right'
+    'down down down';
+}
+
+.tile {
+  background-color: black;
+  height: 100%;
+  width: 100%;
+}
+
+#mid {
+  background-color: transparent;
+}
+
+
+/* GAME */
+/*****************************************************************/
+
+#game {
+  background-color: grey;
+
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
 }

@@ -1,15 +1,5 @@
-top down
+1. create the game loop
 
-yellow mouth at bottom
+2. load images
 
-yellow mouth pulls creature toward it
-
-creature must walk with up arrow
-
-sometimes bones and words come its way (something that can be collected)
-
-player must collect them in order to survive (left & right)
-
-when he reaches a certain score WIN
-
-reference DESERT BUS game
+3. animate them

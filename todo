@@ -1,0 +1,35 @@
+// ON START
+pulse_anim()
+stand_anim()
+cloud_anim() // ?
+play_music()
+give_suggestion() // start moving
+
+
+// WHEN KEY PRESSED
+WHILE WALKING {
+  walk_anim()
+  road_anim()
+  play_footsteps()
+  decr_yellow()
+
+  if see bone {
+    give_suggestion() // eat the bone
+  }
+
+}
+
+// WHEN KEY NOT PRESSED
+WHILE STATIONARY {
+  incr_yellow() 
+  decr_hunger()
+  
+  if bone {
+    block(fwd_key)
+    grab_bone_anim()
+    refill_hunger()
+    unblock(fwd_key)
+    give_suggestion() // keep moving
+  }
+
+}
