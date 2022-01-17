@@ -5,38 +5,38 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
+  <link rel="stylesheet" href="body.css">
   <link rel="stylesheet" href="style.css">
   
-  <title>Document</title>
+  <title>It remains</title>
+
 </head>
 <body>
   
-  <div id="game">
+  <div id="frame">
 
-    <div id="player">
-      <div id="right_leg"></div>
-      <div id="left_leg"></div>
-      <div id="hand"></div>
-      <div id="bone"></div>
+    <div id="top"></div>
+    <div id="left"></div>
+
+    <div>
+
+      <img src="images/background1.png" id="background1">
+      <img src="images/background2.png" id="background2">
+
+      <img src="images/road.png" id="road">
+
+      <img src="images/left_leg.png" id="leftLeg">
+      <img src="images/right_leg.png" id="rightLeg">
+
     </div>
-    
-    <div id="yellow"></div>
-    <div id="background"></div>
-    <img src="images/background.png" width="500" height="600"> 
-    <div id="sky"></div>
+
+    <div id="right"></div>
+    <div id="bottom"></div>
 
   </div>
 
-  <div id="screen">
-
-    <div class="tile" id="up"></div>
-    <div class="tile" id="left"></div>
-    <div class="tile" id="mid"></div>
-    <div class="tile" id="right"></div>
-    <div class="tile" id="down"></div>
-
-  </div>
-
+  <script src="js/lib.js"></script>
+  <script src="js/resistor.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

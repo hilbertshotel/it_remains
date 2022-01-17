@@ -1,5 +1,20 @@
-1. create the game loop
+1. create the game loop (DONE)
 
 2. load images
+- background
+- road marks
+- left leg
+- right leg
+- bone
+- word
+- hand
 
 3. animate them
+
+
+sound:
+- footsteps
+- munching/slurping
+- pickup sound
+- background noise (gets louder when yellow becomes stronger)
+- end music for when yellow eats you

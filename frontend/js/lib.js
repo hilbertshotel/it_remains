@@ -1,8 +1,8 @@
-"use strict";
 // GET
 const get = (id) => {
-    return document.getElementById(id);
-};
+  return document.getElementById(id)
+}
+
 // // CLASS
 // const getClass = (name, pos=-1) => {
 //   const c = document.getElementsByClassName(name)
@@ -12,12 +12,14 @@ const get = (id) => {
 //       return c[pos]
 //   }
 // }
+
 // // MAKE
 // const MAKEOBJECT = {
 //   class: (e, v) => { e.className = v },
 //   id: (e, v) => { e.id = v },
 //   text: (e, v) => { e.innerHTML = v }
 // }
+
 // const make = (type, ...properties) => {
 //   const element = document.createElement(type)
 //   for (const property of properties) {
@@ -26,28 +28,33 @@ const get = (id) => {
 //   }
 //   return element
 // }
-// // SLEEP
-// const sleep = (ms) => {
-//   return new Promise((resolve) => setTimeout(resolve, ms));
-// }
+
+// SLEEP
+const sleep = (ms) => {
+  return new Promise((resolve) => setTimeout(resolve, ms))
+}
+
 // // RAND
 // const rand = (min, max) => {
 //   min = Math.ceil(min)
 //   max = Math.floor(max)
 //   return Math.floor(Math.random() * (max - min + 1) + min)
 // }
+
 // // INSERT
 // const insert = (parent, ...elements) => {
 //   for (const element of elements) {
 //     parent.append(element)
 //   }
 // }
+
 // // CLEAR
 // const clear = (...elements) => {
 //   for (const element of elements) {
 //     element.innerHTML = ""
 //   }
 // }
+
 // // SHUFFLE
 // const shuffle = (array) => {
 //   for (let i = array.length - 1; i > 0; i--) {

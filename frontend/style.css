@@ -6,46 +6,61 @@ body {
   margin: 0;
 }
 
+/* FRAME */
+/****************************************************************/
 
-/* SCREEN */
-/*****************************************************************/
-#up { grid-area: up; }
-#left { grid-area: left; }
-#mid { grid-area: mid; }
-#right { grid-area: right; }
-#down { grid-area: down; }
-
-#screen {
+#frame {
   position: fixed;
-  width: 100vw;
   height: 100vh;
-
-  display: grid;
-  grid-template-areas:
-    'up up up'
-    'left mid right'
-    'left mid right'
-    'down down down';
+  width: 100vw;
 }
 
-.tile {
-  background-color: black;
-  height: 100%;
-  width: 100%;
+#top, #bottom, #left, #right {
+	background: black;
+	position: fixed;
+  z-index: 1;
 }
 
-#mid {
-  background-color: transparent;
+#left, #right {
+  top: 0; bottom: 0;
+  width: 50px;
 }
+#left { left: 0; }
+#right { right: 0; }
+  
+#top, #bottom {
+  left: 0; right: 0;
+  height: 50px;
+}
+#top { top: 0; }
+#bottom { bottom: 0; }
 
 
-/* GAME */
-/*****************************************************************/
+/* BACKGROUND */
+/****************************************************************/
 
-#game {
-  background-color: grey;
-
+#background1 {
   position: fixed;
-  width: 100vw;
-  height: 100vh;
+  bottom: 50px;
+  left: -80px;
+}
+
+#background2 {
+  position: fixed;
+  bottom: 50px;
+  left: -80px;
+
+  animation: backgroundGlimmer 3s ease-in infinite;
+}
+
+@keyframes backgroundGlimmer {
+  0% { opacity: 0; }
+  50% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+#road {
+  position: fixed;
+  bottom: 50px;
+  left: -80px;
 }

@@ -1,0 +1,108 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+#up { grid-area: up; }
+#left { grid-area: left; }
+#mid { grid-area: mid; }
+#right { grid-area: right; }
+#down { grid-area: down; }
+#background { grid-area: background; }
+
+/* SCREEN COVER */
+/*****************************************************************/
+
+#screen_cover {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+
+  display: grid;
+  grid-template-areas:
+    'up up up up up up up up'
+    'left mid mid mid mid mid mid right'
+    'left mid mid mid mid mid mid right'
+    'left mid mid mid mid mid mid right'
+    'left mid mid mid mid mid mid right'
+    'left mid mid mid mid mid mid right'
+    'left mid mid mid mid mid mid right'
+    'left mid mid mid mid mid mid right'
+    'left mid mid mid mid mid mid right'
+    'left mid mid mid mid mid mid right'
+    'left mid mid mid mid mid mid right'
+    'down down down down down down down down';
+}
+
+.tile {
+  background-color: black;
+  height: 100%;
+  width: 100%;
+}
+
+#mid {
+  background-color: transparent;
+}
+
+
+/* GAME SCREEN */
+/*****************************************************************/
+
+#game_screen {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+
+  display: grid;
+  grid-template-areas:
+    'up up up up up up up up'
+    'left background background background background background background right'
+    'left background background background background background background right'
+    'left background background background background background background right'
+    'left background background background background background background right'
+    'left background background background background background background right'
+    'left background background background background background background right'
+    'left background background background background background background right'
+    'left background background background background background background right'
+    'left background background background background background background right'
+    'left background background background background background background right'
+    'down down down down down down down down';
+}
+
+
+/* BACKGROUND */
+/*****************************************************************/
+
+/* original size: 1032w 1020h */
+#background {
+  background-image: url("images/background.png");
+  background-size: cover;
+  position: absolute;
+  height: 500px;
+  width: 500px;
+}
+
+
+/* PLAYER */
+/*****************************************************************/
+
+/* original size: 904h 484w */
+#left_leg {
+  position: relative;
+  left: 50px;
+  top: -50px;
+  height: 452px; 
+  width: 242px;
+}
+
+/* original size: 944h 568w */
+#right_leg {
+  position: relative;
+  top: -500px;
+  left: 150px;
+  height: 472px;
+  width: 284px;
+}
