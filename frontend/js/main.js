@@ -1,38 +1,17 @@
 
-// MAIN
-var keyState = {}
+main = () => {
 
-window.addEventListener('keydown', (event) => {
-    keyState[event.key] = true
-})  
-
-window.addEventListener('keyup', (event) => {
-    keyState[event.key] = false
-})
-
-
-startGame = () => {
-
-  let re = resistor()
-  re.debug()
-
-  loop = () => {
-
-    if (keyState["ArrowDown"]) {
-      re.walk()
-    }
-
-    if (!keyState["ArrowDown"]) {
-      re.stop()
-    }
-
-    window.requestAnimationFrame(loop)
-
+  loadMenu = (gameDiv) => {
+    const h1 = make("h1", "text=It remains")
+    const button = make("button", "text=Start game")
+    button.onclick = startGame
+    insert(gameDiv, h1, button)
   }
 
-  loop()
+  const gameDiv = get("game")
+  loadMenu(gameDiv)
 
 }
 
 
-startGame()
+main()

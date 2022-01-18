@@ -39,6 +39,11 @@ body {
 /* BACKGROUND */
 /****************************************************************/
 
+#game {
+  text-align: center;
+  padding: 3rem;
+}
+
 #background1 {
   position: fixed;
   bottom: 50px;
@@ -49,7 +54,6 @@ body {
   position: fixed;
   bottom: 50px;
   left: -80px;
-
   animation: backgroundGlimmer 3s ease-in infinite;
 }
 
@@ -57,10 +61,4 @@ body {
   0% { opacity: 0; }
   50% { opacity: 1; }
   100% { opacity: 0; }
-}
-
-#road {
-  position: fixed;
-  bottom: 50px;
-  left: -80px;
 }

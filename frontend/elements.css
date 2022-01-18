@@ -1,0 +1,63 @@
+/* LEGS */
+/****************************************************************/
+
+#leftLeg {
+  position: fixed;
+  bottom: 50px;
+  left: -120px; 
+}
+
+#rightLeg {
+  position: fixed;
+  bottom: 50px;
+  left: -50px;
+}
+
+
+/* PATH */
+/****************************************************************/
+
+#path1, #path2, #path3, #path4 {
+  position: fixed;
+  left: -80px;
+  bottom: 30px;
+}
+
+#path1 { visibility: visible; }
+#path2 { visibility: hidden; }
+#path3 { visibility: hidden; }
+#path4 { visibility: hidden; }
+
+
+/* YELLOW */
+/****************************************************************/
+
+#yellow {
+  text-align: center;
+  padding: 3rem;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: yellow;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* BONE -- width: 539px height: 111px */
+/****************************************************************/
+
+#bone {
+  position: fixed;
+  bottom: -150px;
+  left: -520px;
+  width: 2520px;
+  height: 1680px;
+  visibility: hidden;
+}
+
+#hand {
+  position: fixed;
+  bottom: 50px;
+  left: -100px;
+  visibility: hidden;
+}

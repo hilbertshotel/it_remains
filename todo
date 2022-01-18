@@ -22,13 +22,12 @@ WHILE WALKING {
 // WHEN KEY NOT PRESSED
 WHILE STATIONARY {
   incr_yellow() 
-  decr_hunger()
   
-  if bone {
-    block(fwd_key)
+  if bone && not_walking {
+    block_walk_key()
     grab_bone_anim()
-    refill_hunger()
-    unblock(fwd_key)
+    count_point()
+    unblock(walk_key)
     give_suggestion() // keep moving
   }
 

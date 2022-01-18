@@ -5,8 +5,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <link rel="stylesheet" href="body.css">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="elements.css">
+  <link rel="stylesheet" href="main.css">
   
   <title>It remains</title>
 
@@ -14,29 +14,22 @@
 <body>
   
   <div id="frame">
-
     <div id="top"></div>
     <div id="left"></div>
-
-    <div>
-
-      <img src="images/background1.png" id="background1">
-      <img src="images/background2.png" id="background2">
-
-      <img src="images/road.png" id="road">
-
-      <img src="images/left_leg.png" id="leftLeg">
-      <img src="images/right_leg.png" id="rightLeg">
-
-    </div>
-
+    <div id="game"></div>
     <div id="right"></div>
     <div id="bottom"></div>
-
   </div>
 
+  <div id="yellow"></div>
+
   <script src="js/lib.js"></script>
-  <script src="js/resistor.js"></script>
+  <script src="js/elements/bone.js"></script>
+  <script src="js/elements/path.js"></script>
+  <script src="js/elements/player.js"></script>
+  <script src="js/elements/yellow.js"></script>
+  <script src="js/game.js"></script>
   <script src="js/main.js"></script>
+
 </body>
 </html>

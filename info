@@ -1,16 +1,14 @@
-1. create the game loop (DONE)
 
-2. load images
-- background
-- road marks
-- left leg
-- right leg
-- bone
-- word
-- hand
+2. BONE MECHANICS
+3. TEST ON OTHER SCREEN
 
-3. animate them
+MAKE BACKWARDS WALKING (FOR IF YOU MISS A BONE)
 
+KEEP STATE IN DOM ID's?
+
+4. UPLOAD DEMO ON SERVER
+
+5. INSTALL CUBASE
 
 sound:
 - footsteps
