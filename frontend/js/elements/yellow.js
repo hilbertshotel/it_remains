@@ -1,5 +1,5 @@
 
-function initYellow() {
+const initYellow = () => {
 
   let
     yellowDiv = get("yellow"),

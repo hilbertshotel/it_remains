@@ -1,5 +1,5 @@
 
-main = () => {
+const main = () => {
 
   loadMenu = (gameDiv) => {
     const h1 = make("h1", "text=It remains")

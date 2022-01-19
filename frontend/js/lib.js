@@ -30,22 +30,22 @@ const make = (type, ...properties) => {
   return element
 }
 
-// SLEEP
-const sleep = (ms) => {
-  return new Promise((resolve) => setTimeout(resolve, ms))
-}
+// // SLEEP
+// const sleep = (ms) => {
+//   return new Promise((resolve) => setTimeout(resolve, ms))
+// }
 
-// RAND
-const rand = (min, max) => {
-  min = Math.ceil(min)
-  max = Math.floor(max)
-  return Math.floor(Math.random() * (max - min + 1)) + min
-}
+// // RAND
+// const rand = (min, max) => {
+//   min = Math.ceil(min)
+//   max = Math.floor(max)
+//   return Math.floor(Math.random() * (max - min + 1)) + min
+// }
 
-// DICE
-const d = (max) => {
-  return rand(1, max)
-}
+// // DICE
+// const d = (max) => {
+//   return rand(1, max)
+// }
 
 // INSERT
 const insert = (parent, ...elements) => {

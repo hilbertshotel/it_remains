@@ -43,7 +43,7 @@
   pointer-events: none;
 }
 
-/* BONE -- width: 539px height: 111px */
+/* BONE */
 /****************************************************************/
 
 #bone {
@@ -53,11 +53,34 @@
   width: 2520px;
   height: 1680px;
   visibility: hidden;
+
+  animation-duration: 3.5s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
 }
+
+@keyframes moveUp {
+  100% { bottom: 650px }
+}
+
+/* HAND */
+/****************************************************************/
 
 #hand {
   position: fixed;
-  bottom: 50px;
+  top: -900px;
   left: -100px;
   visibility: hidden;
+}
+
+/* SCORE */
+/****************************************************************/
+
+#score {
+  position: fixed;
+  top: 60px;
+  left: 1350px;
+  font-size: 100px;
+  user-select: none;
+  color: white;
 }

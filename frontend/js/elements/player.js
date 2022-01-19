@@ -1,5 +1,5 @@
 
-function initPlayer() {
+const initPlayer = () => {
 
   // optimize and remove getComputedStyle call on every function call
 

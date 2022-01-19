@@ -1,5 +1,5 @@
 
-startGame = () => {
+const startGame = () => {
 
   // load game elements
   loadImages = (gameDiv, images) => {
@@ -25,30 +25,25 @@ startGame = () => {
   clear(gameDiv)
   loadImages(gameDiv, images)
 
-
   // handle key events
   let keyState = { ArrowDonw: false }
 
-  window.addEventListener('keydown', (event) => {
-      keyState[event.key] = true
-  })  
-
-  window.addEventListener('keyup', (event) => {
-      keyState[event.key] = false
-  })
-
+  const addKey = (event) => { keyState[event.key] = true }
+  const delKey = (event) => { keyState[event.key] = false }
+  window.addEventListener('keydown', addKey)  
+  window.addEventListener('keyup', delKey)
 
   // get game data
   let
     player = initPlayer(),
     path = initPath(),
     yellow = initYellow(),
-    bone = initBone()
-
-  counter = 0
+    bone = initBone(),
+    hand = initHand(),
+    score = initScore()
 
   // start game loop
-  loop = () => {
+  const loop = () => {
 
     if (yellow.max()) {
       const yellowDiv = get("yellow")
@@ -60,14 +55,7 @@ startGame = () => {
     else if (keyState["ArrowDown"]) {
       player.walk(path)
       yellow.decr()
-      
-      counter++ // FOR SOME REASON THE isInFront FUNCTION TAKES THIS COUNTER? SCOPE ISSUE?
-      console.log(counter)
-
-      if (counter === 500) {
-        bone.insert()
-        counter = 0
-      }
+      bone.insert()
     }
 
     else if (!keyState["ArrowDown"]) {
@@ -75,8 +63,8 @@ startGame = () => {
       yellow.incr()
 
       if (bone.isInFront()) {
-        // hand.grab()
-        console.log("GOOD FOR THE TAKING")
+        window.removeEventListener("keydown", addKey)
+        hand.take(bone, addKey, score)
       }
     }
 

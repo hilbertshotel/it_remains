@@ -1,5 +1,5 @@
 
-function initPath() {
+const initPath = () => {
 
   let
     path1Div = get("path1"),
