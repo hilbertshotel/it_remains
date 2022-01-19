@@ -65,3 +65,13 @@ body {
   50% { opacity: 1; }
   100% { opacity: 0; }
 }
+
+/* BACKGROUND */
+/****************************************************************/
+
+#screen {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+}
