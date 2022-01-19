@@ -1,11 +1,11 @@
 const initScore = () => {
 
   let
-    yellowDiv = get("yellow")
+    gameDiv = get("game")
     score = 0
 
   const scoreDiv = make("div", "id=score", "text=0")
-  document.body.insertBefore(scoreDiv, yellowDiv)
+  insert(gameDiv, scoreDiv)
 
   return {
 
