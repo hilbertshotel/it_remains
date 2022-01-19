@@ -4,13 +4,15 @@
 #leftLeg {
   position: fixed;
   bottom: 50px;
-  left: -120px; 
+  left: 80px;
+  /* left: -120px;  */
 }
 
 #rightLeg {
   position: fixed;
   bottom: 50px;
-  left: -50px;
+  left: -200px;
+  /* left: -50px; */
 }
 
 
@@ -48,13 +50,13 @@
 
 #bone {
   position: fixed;
-  bottom: -150px;
-  left: -520px;
-  width: 2520px;
-  height: 1680px;
+  bottom: 50px;
+  left: -60px;
+  width: 1820px;
+  height: 980px;
   visibility: hidden;
 
-  animation-duration: 3.5s;
+  animation-duration: 2s;
   animation-timing-function: linear;
   animation-fill-mode: forwards;
 }
@@ -70,7 +72,6 @@
   position: fixed;
   top: -900px;
   left: -100px;
-  visibility: hidden;
 }
 
 /* SCORE */

@@ -5,40 +5,44 @@ const initHand = () => {
     originalTop = parseInt(window.getComputedStyle(handImg).top)
     currentTop = originalTop
     direction = "down"
+    downSpeed = 4
+    upSpeed = 5
 
   return {
 
     take: (bone, addKey, score) => {
 
-      handImg.style.visibility = "visible"
-
       if (direction === "down") {
 
         if (currentTop < -200) {
-          currentTop += 2
+          currentTop += downSpeed
           handImg.style.top = `${currentTop}px`
-        } else {
+        }
+        
+        else {
           bone.beTaken()
           direction = "up"
         }
 
-      } else {
+      }
+      
+      else {
 
         if (currentTop > -900) {
-          currentTop -= 3
+          currentTop -= upSpeed
           handImg.style.top = `${currentTop}px`
-        } else {
+          console.log(currentTop)
+        }
+        
+        else {
+          console.log(currentTop)
           bone.remove()
           direction = "down"
-          handImg.style.visibility = "hidden"
           window.addEventListener("keydown", addKey)
           score.update()
         }
 
       }
-
     }
-
   }
-
 }

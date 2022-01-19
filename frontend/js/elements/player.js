@@ -1,8 +1,6 @@
 
 const initPlayer = () => {
 
-  // optimize and remove getComputedStyle call on every function call
-
   let
     leftLeg = get("leftLeg"),
     rightLeg = get("rightLeg"),
@@ -10,51 +8,38 @@ const initPlayer = () => {
     counter = 0,
     leg = "left"
 
+  moveLeg = (bot, path, l, legImg) => {
+    if (counter >= 150) {
+      counter = 0
+      leg = l
+      path.move()
+    } else if (counter < 75) {
+      legImg.style.bottom = `${bot+4}px`
+      counter+=2
+    } else if (counter >= 75) {
+      legImg.style.bottom = `${bot-8}px`
+      counter+=4
+    }
+  } 
+
   return {
 
     walk: (path) => {
 
+      // it think it's not very smart to call getComputedStyle in the game loop
+
       if (leg === "left") {
-
-        // move left leg
         let leftLegBottom = parseInt(window.getComputedStyle(leftLeg).bottom)
-
-        if (counter >= 200) {
-          counter = 0
-          leg = "right"
-          path.move()
-        } else if (counter < 100) {
-          leftLeg.style.bottom = `${leftLegBottom+4}px`
-          counter+=2
-        } else if (counter >= 100) {
-          leftLeg.style.bottom = `${leftLegBottom-8}px`
-          counter+=4
-        }
-
+        moveLeg(leftLegBottom, path, "right", leftLeg)
       }
       
       else if (leg === "right") {
-
-        // move right leg
         let rightLegBottom = parseInt(window.getComputedStyle(rightLeg).bottom)
-
-        if (counter >= 200) {
-          counter = 0
-          leg = "left"
-          path.move()
-        } else if (counter < 100) {
-          rightLeg.style.bottom = `${rightLegBottom+4}px`
-          counter+=2
-        } else if (counter >= 100) {
-          rightLeg.style.bottom = `${rightLegBottom-8}px`
-          counter+=4
-        }
-
+        moveLeg(rightLegBottom, path, "left", rightLeg)
       }
 
     },
 
-    // player stop
     stop: () => {
       leftLeg.style.bottom = originalBottom
       rightLeg.style.bottom = originalBottom

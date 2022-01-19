@@ -1,0 +1,13 @@
+[Unit]
+Description=it_remains
+
+[Service]
+Restart=always
+RestartSec=30s
+WorkingDirectory=/home/user/src/it_remains
+ExecStart=/home/user/src/it_remains/it_remains
+StandardOutput=append:/home/user/src/it_remains/logs/it_remains.log
+StandardError=append:/home/user/src/it_remains/logs/it_remains.log
+
+[Install]
+WantedBy=multi-user.target
