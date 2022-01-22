@@ -2,10 +2,10 @@ const initHand = () => {
 
   let
     handImg = get("hand"),
-    originalTop = parseInt(window.getComputedStyle(handImg).top)
-    currentTop = originalTop
-    direction = "down"
-    downSpeed = 4
+    originalTop = parseInt(window.getComputedStyle(handImg).top),
+    currentTop = originalTop,
+    direction = "down",
+    downSpeed = 4,
     upSpeed = 5
 
   return {

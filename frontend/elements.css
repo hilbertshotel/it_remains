@@ -1,20 +1,19 @@
 /* LEGS */
 /****************************************************************/
 
+/* w1720 - h880 */
+
 #leftLeg {
   position: fixed;
   bottom: 50px;
-  left: 80px;
-  /* left: -120px;  */
+  left: 30px;
 }
 
 #rightLeg {
   position: fixed;
   bottom: 50px;
-  left: -200px;
-  /* left: -50px; */
+  left: -210px;
 }
-
 
 /* PATH */
 /****************************************************************/
@@ -29,7 +28,6 @@
 #path2 { visibility: hidden; }
 #path3 { visibility: hidden; }
 #path4 { visibility: hidden; }
-
 
 /* YELLOW */
 /****************************************************************/
@@ -80,7 +78,7 @@
 #score {
   position: fixed;
   top: 60px;
-  left: 1350px;
+  left: 1250px;
   font-size: 100px;
   user-select: none;
   color: white;

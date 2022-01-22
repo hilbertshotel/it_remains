@@ -1,5 +1,5 @@
 
-const initPlayer = () => {
+const initLegs = () => {
 
   let
     leftLeg = get("leftLeg"),
@@ -13,6 +13,7 @@ const initPlayer = () => {
       counter = 0
       leg = l
       path.move()
+      // audio.footsteps.play()
     } else if (counter < 75) {
       legImg.style.bottom = `${bot+4}px`
       counter+=2

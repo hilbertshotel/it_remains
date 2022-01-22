@@ -35,7 +35,7 @@ const startGame = () => {
 
   // get game data
   let
-    player = initPlayer(),
+    legs = initLegs(),
     path = initPath(),
     yellow = initYellow(),
     bone = initBone(),
@@ -53,13 +53,13 @@ const startGame = () => {
     }
 
     else if (keyState["ArrowDown"]) {
-      player.walk(path)
+      legs.walk(path)
       yellow.decr()
       bone.insert()
     }
 
     else if (!keyState["ArrowDown"]) {
-      player.stop()
+      legs.stop()
       yellow.incr()
 
       if (bone.isInFront()) {

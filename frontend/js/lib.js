@@ -42,10 +42,10 @@ const rand = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1)) + min
 }
 
-// // DICE
-// const d = (max) => {
-//   return rand(1, max)
-// }
+// DICE
+const d = (max) => {
+  return rand(1, max)
+}
 
 // INSERT
 const insert = (parent, ...elements) => {

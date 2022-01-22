@@ -1,3 +1,5 @@
+1. PAUSE AFTER EACH STEP BEFORE TAKING THE NEXT
+
 2. HIDE EDGES
 
 3. FIX DRAWINGS
@@ -6,7 +8,4 @@
 
 sound:
 - footsteps
-- munching/slurping
-- pickup sound
-- background noise (gets louder when yellow becomes stronger)
-- end music for when yellow eats you
+- music = WILLIAM BASINSKI - THE TRAIL OF TEARS 21:00

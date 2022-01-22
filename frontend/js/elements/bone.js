@@ -2,11 +2,11 @@
 const initBone = () => {
 
   let
-    boneImg = get("bone")
-    time = 0
-    vis = false
-    noBonePeriod = rand(200, 1000)
-    isBonePeriod = noBonePeriod + rand(30, 60)
+    boneImg = get("bone"),
+    time = 0,
+    vis = false,
+    noBonePeriod = rand(100, 800),
+    isBonePeriod = noBonePeriod + 30
 
   moveBone = (b, l, w, h, v) => {
     boneImg.style.bottom = `${b}px`

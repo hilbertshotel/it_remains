@@ -16,17 +16,17 @@ const initYellow = () => {
 
       if (opacity < 1) {
 
+        if (incrCounter === 10) {
+          incrCounter = 0
+          incremented = false
+        }
+
         if (!incremented) {
-          opacity += .01
+          opacity += .03
           yellowDiv.style.opacity = `${opacity}`
           incremented = true
         } else {
           incrCounter++
-        }
-
-        if (incrCounter === 10) {
-          incrCounter = 0
-          incremented = false
         }
 
       }
@@ -38,7 +38,7 @@ const initYellow = () => {
       if (opacity > 0) {
 
         if (!decremented) {
-          opacity -= .01
+          opacity -= .03
           yellowDiv.style.opacity = `${opacity}`
           decremented = true
         } else {
