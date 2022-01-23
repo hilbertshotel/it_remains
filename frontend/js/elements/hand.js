@@ -22,7 +22,7 @@ const initHand = () => {
 
   return {
 
-    take: (bone, addKey, score) => {
+    take: (bone, addKey, score, audio) => {
 
       if (direction === "down") {
 
@@ -33,6 +33,7 @@ const initHand = () => {
         
         else {
           bone.hide()
+          audio.pickup.play()
           changeVisAndDir("hidden", "visible", "up")
         }
 

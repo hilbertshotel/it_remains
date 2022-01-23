@@ -1,5 +1,5 @@
 
-const startGame = () => {
+const startGame = (audio) => {
 
   // load game elements
   const images = [
@@ -55,7 +55,7 @@ const startGame = () => {
     }
 
     else if (keyState["ArrowDown"]) {
-      legs.walk(path)
+      legs.walk(path, audio)
       yellow.decr()
       bone.insert()
     }
@@ -66,7 +66,7 @@ const startGame = () => {
 
       if (bone.isInFront()) {
         window.removeEventListener("keydown", addKey)
-        hand.take(bone, addKey, score)
+        hand.take(bone, addKey, score, audio)
       }
     }
 
