@@ -2,24 +2,26 @@
 const startGame = () => {
 
   // load game elements
-  loadImages = (gameDiv, images) => {
-    for (const image of images) {
-      imgDiv = make("img", image.src, image.id)
-      insert(gameDiv, imgDiv)
-    }
-  }
-
   const images = [
     { src: "src=images/background1.png", id: "id=background1" },
     { src: "src=images/background2.png", id: "id=background2" },
     { src: "src=images/path1.png", id: "id=path1" },
     { src: "src=images/path2.png", id: "id=path2" },
     { src: "src=images/path3.png", id: "id=path3" },
+    { src: "src=images/path4.png", id: "id=path4" },
     { src: "src=images/leftLeg.png", id: "id=leftLeg" },
     { src: "src=images/rightLeg.png", id: "id=rightLeg" },
     { src: "src=images/bone.png", id: "id=bone" },
-    { src: "src=images/hand.png", id: "id=hand" }
+    { src: "src=images/hand.png", id: "id=hand" },
+    { src: "src=images/handGrab.png", id: "id=handGrab" }
   ]
+
+  loadImages = (gameDiv, images) => {
+    for (const image of images) {
+      imgDiv = make("img", image.src, image.id)
+      insert(gameDiv, imgDiv)
+    }
+  }
 
   const gameDiv = get("game")
   clear(gameDiv)

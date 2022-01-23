@@ -2,11 +2,23 @@ const initHand = () => {
 
   let
     handImg = get("hand"),
+    handGrabImg = get("handGrab"),
     originalTop = parseInt(window.getComputedStyle(handImg).top),
     currentTop = originalTop,
     direction = "down",
     downSpeed = 4,
     upSpeed = 5
+
+  const changeVisAndDir = (vis1, vis2, dir) => {
+    handImg.style.visibility = vis1
+    handGrabImg.style.visibility = vis2
+    direction = dir
+  }
+
+  const changeTop = () => {
+    handImg.style.top = `${currentTop}px`
+    handGrabImg.style.top = `${currentTop}px`
+  }
 
   return {
 
@@ -16,12 +28,12 @@ const initHand = () => {
 
         if (currentTop < -200) {
           currentTop += downSpeed
-          handImg.style.top = `${currentTop}px`
+          changeTop()
         }
         
         else {
-          bone.beTaken()
-          direction = "up"
+          bone.hide()
+          changeVisAndDir("hidden", "visible", "up")
         }
 
       }
@@ -30,14 +42,12 @@ const initHand = () => {
 
         if (currentTop > -900) {
           currentTop -= upSpeed
-          handImg.style.top = `${currentTop}px`
-          console.log(currentTop)
+          changeTop()
         }
         
         else {
-          console.log(currentTop)
-          bone.remove()
-          direction = "down"
+          bone.restore()
+          changeVisAndDir("visible", "hidden", "down")
           window.addEventListener("keydown", addKey)
           score.update()
         }

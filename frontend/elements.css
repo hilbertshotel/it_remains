@@ -1,18 +1,16 @@
 /* LEGS */
 /****************************************************************/
 
-/* w1720 - h880 */
-
 #leftLeg {
   position: fixed;
   bottom: 50px;
-  left: 30px;
+  left: 0px;
 }
 
 #rightLeg {
   position: fixed;
   bottom: 50px;
-  left: -210px;
+  left: -150px;
 }
 
 /* PATH */
@@ -21,7 +19,7 @@
 #path1, #path2, #path3, #path4 {
   position: fixed;
   left: -80px;
-  bottom: 30px;
+  bottom: 0px;
 }
 
 #path1 { visibility: visible; }
@@ -38,7 +36,7 @@
   position: fixed;
   width: 100vw;
   height: 100vh;
-  background-color: yellow;
+  background-color: #fee624;
   opacity: 0;
   pointer-events: none;
 }
@@ -49,28 +47,20 @@
 #bone {
   position: fixed;
   bottom: 50px;
-  left: -60px;
-  width: 1820px;
-  height: 980px;
+  left: 0px;
   visibility: hidden;
-
-  animation-duration: 2s;
-  animation-timing-function: linear;
-  animation-fill-mode: forwards;
-}
-
-@keyframes moveUp {
-  100% { bottom: 650px }
 }
 
 /* HAND */
 /****************************************************************/
 
-#hand {
+#hand, #handGrab {
   position: fixed;
   top: -900px;
   left: -100px;
 }
+
+#handGrab { visibility: hidden; }
 
 /* SCORE */
 /****************************************************************/

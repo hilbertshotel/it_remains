@@ -8,14 +8,6 @@ const initBone = () => {
     noBonePeriod = rand(100, 800),
     isBonePeriod = noBonePeriod + 30
 
-  moveBone = (b, l, w, h, v) => {
-    boneImg.style.bottom = `${b}px`
-    boneImg.style.left = `${l}px`
-    boneImg.style.width = `${w}px`
-    boneImg.style.height = `${h}px`
-    boneImg.style.visibility = v
-  }
-
   return {
 
     insert: () => {
@@ -33,9 +25,9 @@ const initBone = () => {
       }
       
       else {
+        boneImg.style.visibility = "hidden"
         vis = false
         time = 0
-        boneImg.style.visibility = "hidden"
       }
 
     },
@@ -44,13 +36,11 @@ const initBone = () => {
       return vis
     },
 
-    beTaken: () => {
-      boneImg.style.animationName = "moveUp"
+    hide: () => {
+      boneImg.style.visibility = "hidden"
     },
 
-    remove: () => {
-      boneImg.style.animationName = ""
-      moveBone(50, -200, 2020, 1180, "hidden") // this is hardcoded
+    restore: () => {
       vis = false
       time = 0
     }
