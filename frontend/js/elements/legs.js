@@ -9,20 +9,20 @@ const initLegs = () => {
     leg = "left"
 
   moveLeg = (bot, path, l, legImg, sound) => {
-    if (counter >= 165) {
+    if (counter >= 162) {
       counter = 0
       leg = l
-      path.move()
     } else if (counter < 75) {
       legImg.style.bottom = `${bot+4}px`
       counter+=2
     } else if (counter < 150) {
       legImg.style.bottom = `${bot-8}px`
       counter+=4
-    } else if (counter >= 150) {
+    } else if (counter === 152) {
       sound.play()
+      path.move()
       counter+=2
-    } else if (counter > 151) {
+    } else if (counter > 152) { 
       counter+=2
     }
   } 
