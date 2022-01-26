@@ -5,7 +5,7 @@ const initBone = () => {
     boneImg = get("bone"),
     time = 0,
     vis = false,
-    noBonePeriod = rand(100, 800),
+    noBonePeriod = rand(100, 500),
     isBonePeriod = noBonePeriod + 30
 
   return {

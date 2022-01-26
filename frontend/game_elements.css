@@ -1,0 +1,62 @@
+
+/* LEGS */
+/****************************************************************/
+
+#leftLeg {
+  position: fixed;
+  bottom: 50px;
+  left: -50px;
+}
+
+#rightLeg {
+  position: fixed;
+  bottom: 50px;
+  left: -150px;
+}
+
+/* STEPS */
+/****************************************************************/
+
+#steps1, #steps2, #steps3, #steps4 {
+  position: fixed;
+  left: -80px;
+  bottom: 40px;
+}
+
+#steps1 { visibility: visible; }
+#steps2 { visibility: hidden; }
+#steps3 { visibility: hidden; }
+#steps4 { visibility: hidden; }
+
+/* BONE */
+/****************************************************************/
+
+#bone {
+  position: fixed;
+  bottom: 50px;
+  left: 0px;
+  visibility: hidden;
+}
+
+/* HAND */
+/****************************************************************/
+
+#hand, #handGrab {
+  position: fixed;
+  top: -900px;
+  left: -100px;
+}
+#handGrab { visibility: hidden; }
+
+/* SCORE */
+/****************************************************************/
+
+#score {
+  position: fixed;
+  top: 60px;
+  left: 1300px;
+  font-size: 100px;
+  user-select: none;
+  color: var(--yellow);
+  text-shadow: 0 0 4px var(--black);
+}

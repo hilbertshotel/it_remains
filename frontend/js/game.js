@@ -1,21 +1,12 @@
 
-const startGame = (audio) => {
+const startGame = async(audio, images, menuDiv) => {
 
-  // load game elements
-  const images = [
-    { src: "src=images/background1.png", id: "id=background1" },
-    { src: "src=images/background2.png", id: "id=background2" },
-    { src: "src=images/path1.png", id: "id=path1" },
-    { src: "src=images/path2.png", id: "id=path2" },
-    { src: "src=images/path3.png", id: "id=path3" },
-    { src: "src=images/path4.png", id: "id=path4" },
-    { src: "src=images/leftLeg.png", id: "id=leftLeg" },
-    { src: "src=images/rightLeg.png", id: "id=rightLeg" },
-    { src: "src=images/bone.png", id: "id=bone" },
-    { src: "src=images/hand.png", id: "id=hand" },
-    { src: "src=images/handGrab.png", id: "id=handGrab" }
-  ]
+  // transition
+  const transitionTime = 1300
+  get("yellow").style.animationName = "fadeIn"
+  await sleep(transitionTime)
 
+  // load rest of images
   loadImages = (gameDiv, images) => {
     for (const image of images) {
       imgDiv = make("img", image.src, image.id)
@@ -23,12 +14,14 @@ const startGame = (audio) => {
     }
   }
 
+  clear(menuDiv)
+  get("background1").style.bottom = "50px"
+  get("background2").style.bottom = "50px"
   const gameDiv = get("game")
-  clear(gameDiv)
   loadImages(gameDiv, images)
 
   // handle key events
-  let keyState = { ArrowDonw: false }
+  let keyState = { ArrowDown: false }
 
   const addKey = (event) => { keyState[event.key] = true }
   const delKey = (event) => { keyState[event.key] = false }
@@ -38,7 +31,7 @@ const startGame = (audio) => {
   // get game data
   let
     legs = initLegs(),
-    path = initPath(),
+    steps = initSteps(),
     yellow = initYellow(),
     bone = initBone(),
     hand = initHand(),
@@ -47,15 +40,16 @@ const startGame = (audio) => {
   // start game loop
   const loop = () => {
 
-    if (yellow.max()) {
-      const yellowDiv = get("yellow")
-      const msg = make("h1", "text=GAME OVER")
-      insert(yellowDiv, msg)
+    if (yellow.max()) { // GAME OVER
+      clear(gameDiv)
+      const endDiv = get("end")
+      const msg = make("h1", "text=GAME OVER", "id=endMsg")
+      insert(endDiv, msg)
       return
     }
 
     else if (keyState["ArrowDown"]) {
-      legs.walk(path, audio)
+      legs.walk(steps, audio)
       yellow.decr()
       bone.insert()
     }
@@ -74,6 +68,8 @@ const startGame = (audio) => {
 
   }
 
-  loop()
+  await sleep(transitionTime).then(() => {
+    loop()
+  })
 
 }

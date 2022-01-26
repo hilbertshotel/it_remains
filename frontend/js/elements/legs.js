@@ -8,7 +8,7 @@ const initLegs = () => {
     counter = 0,
     leg = "left"
 
-  moveLeg = (bot, path, l, legImg, sound) => {
+  moveLeg = (bot, steps, l, legImg, sound) => {
     if (counter >= 162) {
       counter = 0
       leg = l
@@ -20,7 +20,7 @@ const initLegs = () => {
       counter+=4
     } else if (counter === 152) {
       sound.play()
-      path.move()
+      steps.move()
       counter+=2
     } else if (counter > 152) { 
       counter+=2
@@ -29,16 +29,16 @@ const initLegs = () => {
 
   return {
 
-    walk: (path, audio) => {
+    walk: (steps, audio) => {
 
       if (leg === "left") {
         let leftLegBottom = parseInt(window.getComputedStyle(leftLeg).bottom)
-        moveLeg(leftLegBottom, path, "right", leftLeg, audio.leftStep)
+        moveLeg(leftLegBottom, steps, "right", leftLeg, audio.leftStep)
       }
       
       else if (leg === "right") {
         let rightLegBottom = parseInt(window.getComputedStyle(rightLeg).bottom)
-        moveLeg(rightLegBottom, path, "left", rightLeg, audio.rightStep)
+        moveLeg(rightLegBottom, steps, "left", rightLeg, audio.rightStep)
       }
 
     },

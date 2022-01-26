@@ -1,47 +1,102 @@
+:root {
+  --yellow: #fceb21;
+  --brown: #706d59;
+  --black: #292825;
+}
+
 * {
   box-sizing: border-box;
 }
 
 body {
   margin: 0;
-  background-color: black;
+  font-family: "Nexa Rust Sans", sans-serif;
+  background-color: var(--black);
 }
 
-/* MENU */
+/* MUTUALS */
 /****************************************************************/
 
-#header {
-  color: #fee624;
-  font-size: 50px;
-}
-
-#startButton {
-  font-size: 25px;
-}
-
-/* FRAME */
-/****************************************************************/
-
-#frame {
+#background, #menu, #game, #frame, #end {
   position: fixed;
   width: 1500px;
   height: 700px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+#frame, #game, #end, #yellow {
   pointer-events: none;
 }
 
+/* BACKGROUND */
+/****************************************************************/
+
+#background1, #background2 {
+  position: fixed;
+  bottom: -150px;
+  left: 0px;
+}
+
+#background2 {
+  animation: backgroundGlimmer 4s linear infinite;
+}
+
+@keyframes backgroundGlimmer {
+  0% { opacity: 0; }
+  50% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+/* MENU */
+/****************************************************************/
+
+#menu {
+  text-align: center;
+  padding: 5rem;
+}
+
+#logo {
+  animation: spin 300s linear infinite;
+}
+@keyframes spin {
+  100% { transform: rotate(360deg); }
+}
+
+#header {
+  color: var(--yellow);
+  margin-top: 0;
+  font-size: 50px;
+  user-select: none;
+}
+
+#startButton {
+  font-size: 25px;
+  color: var(--brown);
+  border: none;
+  background-color: transparent;
+  font-family: "Nexa Rust Sans", sans-serif;
+}
+
+#startButton:hover {
+  cursor: pointer;
+  text-shadow: 0 0 1px var(--black);
+}
+
+/* FRAME */
+/****************************************************************/
+
 #top, #bottom, #left, #right {
-	background: black;
+	background: var(--black);
 	position: fixed;
-  z-index: 1;
 }
 
 #top {
   height: 2000px;
   width: 100vw;
   top: -1950px;
+  left: -18px;
 }
 
 #left {
@@ -62,32 +117,33 @@ body {
   bottom: -450px;
 }
 
-/* GAME */
+/* YELLOW */
 /****************************************************************/
 
-#game {
+#yellow {
   position: fixed;
-  width: 1500px;
-  height: 700px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  padding: 5rem;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--yellow);
+  opacity: 0;
+  animation-duration: 3s;
+  animation-timing-function: ease-out;
 }
 
-#background1, #background2 {
-  position: fixed;
-  bottom: 0px;
-  left: 0px;
-}
-
-#background2 {
-  animation: backgroundGlimmer 3s linear infinite;
-}
-
-@keyframes backgroundGlimmer {
+@keyframes fadeIn {
   0% { opacity: 0; }
   50% { opacity: 1; }
   100% { opacity: 0; }
+}
+
+/* END */
+/****************************************************************/
+
+#end {
+  text-align: center;
+  padding: 3rem;
+}
+
+#endMsg {
+  color: var(--black);
 }
