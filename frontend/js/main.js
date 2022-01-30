@@ -1,6 +1,15 @@
 
 const main = () => {
 
+  //div
+  const divs = {
+    background: get("background"),
+    menu: get("menu"),
+    game: get("game"),
+    yellow: get("yellow"),
+    end: get("end")
+  }
+
   // audio
   const audio = {
     music: make("audio", "src=audio/music.ogg"),
@@ -29,26 +38,24 @@ const main = () => {
     image1 = images[0],
     image2 = images[1],
     background1 = make("img", image1.src, image1.id),
-    background2 = make("img", image2.src, image2.id),
-    backgroundDiv = get("background")
+    background2 = make("img", image2.src, image2.id)
 
-  insert(backgroundDiv, background1, background2)
+  insert(divs.background, background1, background2)
 
   // load menu
   const
     logo = make("img", "id=logo", "src=images/logo.png"),
     h1 = make("h1", "text=It remains", "id=header"),
     button = make("button", "text=resist", "id=startButton"),
-    rest = images.slice(2),
-    menuDiv = get("menu")
+    rest = images.slice(2)
   
   button.onclick = () => {
     audio.music.loop = true
     audio.music.play()
-    startGame(audio, rest, menuDiv)
+    startGame(audio, rest, divs)
   }
 
-  insert(menuDiv, logo, h1, button)
+  insert(divs.menu, logo, h1, button)
 
 }
 

@@ -1,24 +1,16 @@
 
-const startGame = async(audio, images, menuDiv) => {
+const startGame = (audio, images, divs) => {
 
-  // transition
-  const transitionTime = 1300
-  get("yellow").style.animationName = "fadeIn"
-  await sleep(transitionTime)
-
-  // load rest of images
-  loadImages = (gameDiv, images) => {
-    for (const image of images) {
-      imgDiv = make("img", image.src, image.id)
-      insert(gameDiv, imgDiv)
-    }
-  }
-
-  clear(menuDiv)
+  // prep screen
+  clear(divs.menu)
   get("background1").style.bottom = "50px"
   get("background2").style.bottom = "50px"
-  const gameDiv = get("game")
-  loadImages(gameDiv, images)
+
+  // load rest of images
+  for (const image of images) {
+    imgDiv = make("img", image.src, image.id)
+    insert(divs.game, imgDiv)
+  }
 
   // handle key events
   let keyState = { ArrowDown: false }
@@ -29,22 +21,21 @@ const startGame = async(audio, images, menuDiv) => {
   window.addEventListener('keyup', delKey)
 
   // get game data
-  let
+  const
     legs = initLegs(),
     steps = initSteps(),
-    yellow = initYellow(),
+    yellow = initYellow(divs.yellow),
     bone = initBone(),
     hand = initHand(),
-    score = initScore()
+    score = initScore(divs.game)
 
   // start game loop
   const loop = () => {
 
     if (yellow.max()) { // GAME OVER
-      clear(gameDiv)
-      const endDiv = get("end")
+      clear(divs.game)
       const msg = make("h1", "text=GAME OVER", "id=endMsg")
-      insert(endDiv, msg)
+      insert(divs.end, msg)
       return
     }
 
@@ -68,8 +59,6 @@ const startGame = async(audio, images, menuDiv) => {
 
   }
 
-  await sleep(transitionTime).then(() => {
-    loop()
-  })
+  loop()
 
 }

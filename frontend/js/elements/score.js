@@ -1,8 +1,6 @@
-const initScore = () => {
+const initScore = (gameDiv) => {
 
-  let
-    gameDiv = get("game"),
-    score = 0
+  let score = 0
 
   const scoreDiv = make("div", "id=score", "text=0")
   insert(gameDiv, scoreDiv)

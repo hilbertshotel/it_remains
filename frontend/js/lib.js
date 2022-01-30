@@ -39,10 +39,10 @@ const block = (milliseconds) => {
   } while (currentDate - date < milliseconds)
 }
 
-// SLEEP
-const sleep = (ms) => {
-  return new Promise((resolve) => setTimeout(resolve, ms))
-}
+// // SLEEP
+// const sleep = (ms) => {
+//   return new Promise((resolve) => setTimeout(resolve, ms))
+// }
 
 // RAND
 const rand = (min, max) => {

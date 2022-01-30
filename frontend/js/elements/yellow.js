@@ -1,8 +1,7 @@
 
-const initYellow = () => {
+const initYellow = (yellowDiv) => {
 
   let
-    yellowDiv = get("yellow"),
     opacity = 0,
     incrCounter = 0,
     decrCounter = 0,

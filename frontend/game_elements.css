@@ -2,17 +2,13 @@
 /* LEGS */
 /****************************************************************/
 
-#leftLeg {
+#leftLeg, #rightLeg {
   position: fixed;
   bottom: 50px;
-  left: -50px;
 }
 
-#rightLeg {
-  position: fixed;
-  bottom: 50px;
-  left: -150px;
-}
+#leftLeg { left: -50px; }
+#rightLeg { left: -150px; }
 
 /* STEPS */
 /****************************************************************/
