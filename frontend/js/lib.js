@@ -3,16 +3,6 @@ const get = (id) => {
   return document.getElementById(id)
 }
 
-// // CLASS
-// const getClass = (name, pos=-1) => {
-//   const c = document.getElementsByClassName(name)
-//   if (pos < 0) {
-//       return c
-//   } else {
-//       return c[pos]
-//   }
-// }
-
 // MAKE
 const MAKEOBJECT = {
   class: (e, v) => { e.className = v },
@@ -39,10 +29,10 @@ const block = (milliseconds) => {
   } while (currentDate - date < milliseconds)
 }
 
-// // SLEEP
-// const sleep = (ms) => {
-//   return new Promise((resolve) => setTimeout(resolve, ms))
-// }
+// SLEEP
+const sleep = (ms) => {
+  return new Promise((resolve) => setTimeout(resolve, ms))
+}
 
 // RAND
 const rand = (min, max) => {
@@ -64,11 +54,3 @@ const clear = (...elements) => {
     element.innerHTML = ""
   }
 }
-
-// // SHUFFLE
-// const shuffle = (array) => {
-//   for (let i = array.length - 1; i > 0; i--) {
-//     let rand = Math.floor(Math.random() * (i + 1));
-//     [array[i], array[rand]] = [array[rand], array[i]]
-//   }
-// }

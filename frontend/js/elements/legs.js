@@ -1,9 +1,9 @@
 
-const initLegs = () => {
+const initLegs = (images) => {
 
   let
-    leftLeg = get("leftLeg"),
-    rightLeg = get("rightLeg"),
+    leftLeg = images.leftLeg,
+    rightLeg = images.rightLeg,
     originalBottom = "50px",
     counter = 0,
     leg = "left"

@@ -1,8 +1,8 @@
-const initHand = () => {
+const initHand = (images) => {
 
   let
-    handImg = get("hand"),
-    handGrabImg = get("handGrab"),
+    handImg = images.hand,
+    handGrabImg = images.handGrab,
     originalTop = parseInt(window.getComputedStyle(handImg).top),
     currentTop = originalTop,
     direction = "down",

@@ -5,6 +5,7 @@
 #leftLeg, #rightLeg {
   position: fixed;
   bottom: 50px;
+  visibility: hidden;
 }
 
 #leftLeg { left: -50px; }
@@ -17,20 +18,16 @@
   position: fixed;
   left: -80px;
   bottom: 40px;
+  visibility: hidden;
 }
-
-#steps1 { visibility: visible; }
-#steps2 { visibility: hidden; }
-#steps3 { visibility: hidden; }
-#steps4 { visibility: hidden; }
 
 /* BONE */
 /****************************************************************/
 
 #bone {
   position: fixed;
-  bottom: 50px;
-  left: 0px;
+  bottom: 40px;
+  left: -10px;
   visibility: hidden;
 }
 
@@ -41,8 +38,8 @@
   position: fixed;
   top: -900px;
   left: -100px;
+  visibility: hidden;
 }
-#handGrab { visibility: hidden; }
 
 /* SCORE */
 /****************************************************************/

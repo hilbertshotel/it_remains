@@ -1,3 +1,0 @@
-1. how are points collected ?
-2. fix steps
-3. game over msg

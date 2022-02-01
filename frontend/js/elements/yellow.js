@@ -21,7 +21,7 @@ const initYellow = (yellowDiv) => {
         }
 
         if (!incremented) {
-          opacity += .03
+          opacity += .02
           yellowDiv.style.opacity = `${opacity}`
           incremented = true
         } else {

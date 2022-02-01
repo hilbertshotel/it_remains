@@ -1,12 +1,11 @@
 
-const initBone = () => {
+const initBone = (boneImg) => {
 
   let
-    boneImg = get("bone"),
     time = 0,
     vis = false,
-    noBonePeriod = rand(100, 500),
-    isBonePeriod = noBonePeriod + 30
+    noBonePeriod = rand(50, 350),
+    isBonePeriod = noBonePeriod + 50
 
   return {
 

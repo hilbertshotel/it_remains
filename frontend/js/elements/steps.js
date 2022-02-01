@@ -1,7 +1,7 @@
 
-const initSteps = () => {
+const initSteps = (images) => {
 
-  const steps = [get("steps1"), get("steps2"), get("steps3"), get("steps4")]
+  const steps = [images.steps1, images.steps2, images.steps3, images.steps4]
   let pos = 0
 
   return {

@@ -84,6 +84,12 @@ body {
   text-shadow: 0 0 1px var(--black);
 }
 
+#instructions {
+  margin-top: 7rem;
+  color: var(--yellow);
+  opacity: .8;
+}
+
 /* FRAME */
 /****************************************************************/
 
@@ -108,7 +114,7 @@ body {
   height: 100vh;
   background-color: var(--yellow);
   opacity: 0;
-  animation-duration: 3s;
+  animation-duration: 1s;
   animation-timing-function: ease-out;
 }
 
