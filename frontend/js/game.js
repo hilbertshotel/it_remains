@@ -37,10 +37,9 @@ const startGame = async (audio, divs) => {
   // start game loop
   const loop = () => {
 
-    if (yellow.max()) { // GAME OVER
+    if (yellow.max()) {
       clear(divs.game)
-      const msg = make("h1", "text=GAME OVER", "id=endMsg")
-      insert(divs.end, msg)
+      gameOver(score.show(), divs.end)
       return
     }
 
@@ -68,5 +67,29 @@ const startGame = async (audio, divs) => {
     await sleep(500) 
     loop()
   })()
+
+}
+
+// GAME OVER
+const gameOver = (score, endDiv) => {
+  endDiv.style.visibility = "visible"
+  
+  get("submitButton").onclick = async () => {
+    const username = get("username").value
+
+    if (username) {
+
+      const url = "/some/handler/url" // CHANGE THIS
+      const package = {
+        method: "POST",
+        header: {"content-type": "application/json"},
+        body: JSON.stringify({ username: username, score: score })
+      }
+
+      let response = await fetch(url, package)
+      if (response.ok) { location.reload() }
+
+    }
+  }
 
 }
